@@ -1,0 +1,9 @@
+
+
+#sides-bar{
+    top:0px;
+    left: 0px;
+    height: 100%;
+    width: calc(100px);
+    background-color:white;
+}
