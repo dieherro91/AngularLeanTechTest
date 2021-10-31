@@ -1,8 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { SidebarComponent } from './sidebar/sidebar.component';
 import {MatCardModule} from '@angular/material/card';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatInputModule} from '@angular/material/input';
+
+import { SidebarComponent } from './sidebar/sidebar.component';
 import { SearchComponent } from './search/search.component';
 
 
@@ -18,6 +21,8 @@ import { SearchComponent } from './search/search.component';
   imports: [
     CommonModule,
     MatCardModule,
+    MatDividerModule,
+    MatInputModule,
   ]
 })
 export class MainModule { }
