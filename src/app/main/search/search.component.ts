@@ -1,3 +1,4 @@
+
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -11,5 +12,20 @@ export class SearchComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  nameSearch:string ='City'
+
+  
+  nameSearch:string ='City';
+
+  toggle : boolean = true;
+  
+  onClickToggle(){
+    this.toggle = !this.toggle;
+  }
+
+  handleKeyUp(x:KeyboardEvent){
+     console.log(x)
+     if(x.key==="Enter"){
+      this.toggle = !this.toggle;
+     }
+  }
 }
