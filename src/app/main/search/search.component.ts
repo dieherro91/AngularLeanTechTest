@@ -1,5 +1,8 @@
 
 import { Component, OnInit } from '@angular/core';
+import { City } from '../Interfaces/cities.interface';
+import citiesData from '../../../assets/cities.json'
+
 
 @Component({
   selector: 'app-search',
@@ -13,19 +16,19 @@ export class SearchComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  
-  nameSearch:string ='City';
 
+  nameSearch:string ='City';
   toggle : boolean = true;
+  cities : City[] =citiesData.cities;
   
   onClickToggle(){
     this.toggle = !this.toggle;
   }
 
-  handleKeyUp(x:KeyboardEvent){
-     console.log(x)
-     if(x.key==="Enter"){
+  handleKeyUp(xkey:KeyboardEvent){
+     if(xkey.key==="Enter"){
       this.toggle = !this.toggle;
      }
   }
+
 }
