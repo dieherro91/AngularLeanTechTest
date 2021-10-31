@@ -1,11 +1,12 @@
 
 
-#sides-bar{
+.sides-bar{
+    
     top:0px;
-    left: 0px;
     height: 100%;
-    width: calc(100px);
+    width: 100px;
     background-color:white;
+    padding-top: 20px;
     padding-left: 0px;
     padding-right: 0px;
 }
@@ -27,4 +28,11 @@
 #clocks{
     filter: brightness(0) invert(1);
     margin: 20%;
+}
+#titles{
+    position: absolute;
+    left: 156px;
+    top: 50px;
+    width: 200px;
+    color:#FF4E00;
 }
