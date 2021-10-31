@@ -5,6 +5,9 @@ import { FormsModule } from '@angular/forms';
 import {MatCardModule} from '@angular/material/card';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatInputModule} from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
+import {MatListModule} from '@angular/material/list';
+import {MatRadioModule} from '@angular/material/radio';
 
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { SearchComponent } from './search/search.component';
@@ -25,6 +28,10 @@ import { SearchComponent } from './search/search.component';
     MatCardModule,
     MatDividerModule,
     MatInputModule,
+    MatSelectModule,
+    MatListModule,
+    MatRadioModule,
+    
   ]
 })
 export class MainModule { }
