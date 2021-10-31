@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 import {MatCardModule} from '@angular/material/card';
 import {MatDividerModule} from '@angular/material/divider';
@@ -20,6 +21,7 @@ import { SearchComponent } from './search/search.component';
   ],
   imports: [
     CommonModule,
+    FormsModule,
     MatCardModule,
     MatDividerModule,
     MatInputModule,

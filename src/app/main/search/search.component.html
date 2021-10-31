@@ -1,20 +1,24 @@
-
-
 <mat-card id='card-search'>
     <mat-card-header>
         <mat-card-title id='header-search'>{{nameSearch}}</mat-card-title>
-        <div>
-            <img id='logos-lup' src="../../../assets/icons/Lupatest.svg">
+
+        <div class='logos-lup'>
+            <div class='logos-lup' *ngIf="toggle; else buscando" (click)="onClickToggle()">
+                <img src="../../../assets/icons/Lupatest.svg">
+            </div>
+
+            <ng-template #buscando class='logos-lup' (click)="onClickToggle()">
+                <input type="text" (keyup)="handleKeyUp($event)">
+            </ng-template>
+
         </div>
-        <!-- <mat-form-field>
-            <input matInput placeholder="" type="text">
-        </mat-form-field> -->
+
     </mat-card-header>
 
     <mat-divider></mat-divider>
 
     <mat-card-content>
-        
+
     </mat-card-content>
 
     <mat-card-actions>
