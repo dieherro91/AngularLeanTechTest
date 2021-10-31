@@ -7,9 +7,12 @@
     height: 185px;
     color: #11004F;
     padding-left: 0px;
-    
 }
+
+/* header of search */
 #header-search{
-    
     font-size: 24px;
+}
+#logos-lup{
+    margin-left: auto;
 }
