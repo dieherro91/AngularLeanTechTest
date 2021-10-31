@@ -3,3 +3,14 @@
     height: 100%;
     width: 100%;
 }
+#sides{
+    position: absolute;
+    height: 100%;
+    
+    left: 0px;
+}
+#searching{
+    position: absolute;
+    left: 500px;
+    top:50px;
+}
