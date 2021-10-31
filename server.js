@@ -6,5 +6,5 @@ const app = express();
 app.use(express.static(__dirname + '/dist/angular-lean-tech-test'));
 app.get('/*', function(req,res) {
   res.sendFile(path.join(__dirname+
-    '/dist/angular-lean-tech-test/src/index.html'));});
+    '/dist/angular-lean-tech-test/index.html'));});
 app.listen(process.env.PORT || 8080);
