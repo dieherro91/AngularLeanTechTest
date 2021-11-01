@@ -21,7 +21,7 @@ export class SearchComponent implements OnInit {
   toggle : boolean = true;
   cities : City[] =citiesData.cities;
   searchText:string='';
-  
+
   onClickToggle():void{
     this.toggle = !this.toggle;
   }
