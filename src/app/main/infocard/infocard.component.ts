@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { WeatherService } from '../../services/weather.service';
+
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { WeatherData } from '../Interfaces/weather.interface';
 
 @Component({
   selector: 'app-infocard',
@@ -8,16 +9,19 @@ import { WeatherService } from '../../services/weather.service';
 })
 export class InfocardComponent implements OnInit {
 
-  constructor( private weatherService: WeatherService) { }
+  constructor( ) { }
 
   ngOnInit(): void {
   }
 
+  cityInitial:string='city missing';
+  countryInitial:string='Please Select City'
+  temperatureInitial:string='X'
+  // @Input('nuevodata') nuevo: WeatherData={
+  //   nombre:'',
+  //   poder:0,
+  // }
+  // @Output() onNuevoPersonaje:EventEmitter<WeatherData>=new EventEmitter();
+
   
-  buttoninter():void{
-    console.log("hallo")
-    this.weatherService.getWeather("miami").subscribe(data=>{
-      console.log(data);
-    });
-  }
 }

@@ -1,17 +1,65 @@
-
 <div>
 
-<mat-card >
-    <mat-card-header>
-        <mat-card-title>ciudad</mat-card-title>
-        <mat-card-subtitle>subtitle</mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content>
-    
-    </mat-card-content>
-    <mat-card-actions>
-        <button mat-button (click)="buttoninter();">Update</button>
-    </mat-card-actions>
-</mat-card>
+    <mat-grid-list cols="24" rowHeight="15px" id="weatherCard">
+
+        <!-- row 1 -->
+        <mat-grid-tile [colspan]="24" [rowspan]="2">
+            <mat-icon id='icon-close'>close</mat-icon>
+        </mat-grid-tile>
+
+        <!-- row 2 -->
+        <mat-grid-tile [colspan]="24" [rowspan]="4">
+            <mat-card-title id='title-info'>city, country</mat-card-title>
+        </mat-grid-tile>
+
+        <!-- row 3 -->
+        <mat-grid-tile [colspan]="8" [rowspan]="6">
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="8" [rowspan]="6">
+            <h1 id='temperature'>25°</h1>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="8" [rowspan]="6">
+            <div class="btn-group">
+                <button class='buttons-temp'>C</button>
+                <button class='buttons-temp'>F</button>
+                <button class='buttons-temp'>K</button>
+                
+            </div>
+        </mat-grid-tile>
+
+        <!-- row 4 -->
+        <mat-grid-tile [colspan]="12" [rowspan]="3">
+            <mat-icon id='icon-weather'>home</mat-icon>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="12" [rowspan]="3">
+            <h1 id="title-heat">HOT</h1>
+        </mat-grid-tile>
+
+
+        <!-- row 4 -->
+
+        <mat-grid-tile [colspan]="24" [rowspan]="3">
+            <button id="update-temp" mat-button>Update</button>
+        </mat-grid-tile>
+
+
+        <!-- row 5 -->
+        <mat-grid-tile [colspan]="24" [rowspan]="1">
+        </mat-grid-tile>
+
+    </mat-grid-list>
+
+
+    <!-- <div>
+            <mat-card-title id='title-info'>city, country</mat-card-title>
+            <mat-icon id='icon-close'>close</mat-icon>
+        </div>
+        <div>
+            <h1>25°</h1>
+        </div>
+
+        <div>
+            <button mat-button>Update</button>
+        </div> -->
 
 </div>

@@ -10,18 +10,25 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatRadioModule} from '@angular/material/radio';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { HttpClientModule } from '@angular/common/http';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { SearchComponent } from './search/search.component';
 import { InfocardComponent } from './infocard/infocard.component';
 
 
+
 @NgModule({
   declarations: [
     SidebarComponent,
     SearchComponent,
-    InfocardComponent
+    InfocardComponent,
+    
+    
   ],
+  entryComponents:[
+    InfocardComponent,
+  ],  
   exports:[
     SidebarComponent,
     SearchComponent,
@@ -37,6 +44,7 @@ import { InfocardComponent } from './infocard/infocard.component';
     Ng2SearchPipeModule,
     MatIconModule,
     HttpClientModule,
+    MatGridListModule,
     
   ]
 })

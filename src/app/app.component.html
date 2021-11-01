@@ -1,6 +1,9 @@
 <div id='global'>
     <app-sidebar id='sides'></app-sidebar>
     <app-search id='searching'></app-search>
-    <app-infocard id='infoWeather'></app-infocard>
+    <div id='infoWeather'>
+        <app-infocard (onNuevoPersonaje)="buttoninter();"></app-infocard>
+    </div >
+    
 </div>
 
