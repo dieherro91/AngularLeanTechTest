@@ -14,3 +14,11 @@
     left:156px;
     top:120px;
 }
+
+#infoWeather{
+    position: absolute;
+    left:156px;
+    top:350px;
+    right: 50px;
+    bottom: 50px;
+}
