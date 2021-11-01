@@ -20,12 +20,13 @@ export class SearchComponent implements OnInit {
   nameSearch:string ='City';
   toggle : boolean = true;
   cities : City[] =citiesData.cities;
+  searchText:string='';
   
-  onClickToggle(){
+  onClickToggle():void{
     this.toggle = !this.toggle;
   }
 
-  handleKeyUp(xkey:KeyboardEvent){
+  handleKeyUp(xkey:KeyboardEvent):void{
      if(xkey.key==="Enter"){
       this.toggle = !this.toggle;
      }

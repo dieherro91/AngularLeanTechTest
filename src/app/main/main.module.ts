@@ -8,6 +8,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import {MatListModule} from '@angular/material/list';
 import {MatRadioModule} from '@angular/material/radio';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { SearchComponent } from './search/search.component';
@@ -31,6 +32,7 @@ import { SearchComponent } from './search/search.component';
     MatSelectModule,
     MatListModule,
     MatRadioModule,
+    Ng2SearchPipeModule,
     
   ]
 })
