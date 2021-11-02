@@ -2,26 +2,37 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
-import {MatFormFieldModule} from '@angular/material/form-field';
+
 import {MatCardModule} from '@angular/material/card';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatInputModule} from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon';
 import {MatRadioModule} from '@angular/material/radio';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { HttpClientModule } from '@angular/common/http';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { SearchComponent } from './search/search.component';
+import { InfocardComponent } from './infocard/infocard.component';
+
 
 
 @NgModule({
   declarations: [
     SidebarComponent,
-    SearchComponent
+    SearchComponent,
+    InfocardComponent,
+    
+    
   ],
+  entryComponents:[
+    InfocardComponent,
+  ],  
   exports:[
     SidebarComponent,
     SearchComponent,
+    InfocardComponent
   ],
   imports: [
     CommonModule,
@@ -32,7 +43,8 @@ import { SearchComponent } from './search/search.component';
     MatRadioModule,
     Ng2SearchPipeModule,
     MatIconModule,
-    
+    HttpClientModule,
+    MatGridListModule,
     
   ]
 })

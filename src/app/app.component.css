@@ -12,5 +12,13 @@
 #searching{
     position: absolute;
     left:156px;
-    top:120px;
+    top:100px;
+}
+
+#infoWeather{
+    position: absolute;
+    left:156px;
+    top:320px;
+    right: 50px;
+    
 }

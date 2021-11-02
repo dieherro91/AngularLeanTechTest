@@ -1,0 +1,95 @@
+
+
+
+
+#weatherCard{
+    position: relative;
+    color:#11004F;
+    width: 360px !important;
+    height: 350px ;
+    display: flex;
+    background-color: white;
+    border-radius: 3%;
+
+}
+#title-info{
+    position: relative;
+    text-align: center;
+    margin:auto;
+}
+#title-heat{
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: auto;
+    margin-left: 5px;
+    font-size: 20px;
+}
+#icon-weather{
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: 5px;
+}
+#icon-close{
+    color:#DDDDDD;
+    margin-left: auto;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+#temperature{
+    font-size: 80px;
+    margin-left: auto;
+    color:#FF4E00;
+}
+#update-temp{
+    width: 30%;
+    height: 40px;
+    background-color: #FF4E00;
+    color:white;
+    border-color: #FF4E00;
+    border-radius: 9%;
+    /*box-shadow: 0px 10px 40px 0px rgba(0, 0, 0, 0.2), 0px 5px 10px 0px rgba(0, 0, 0, 0.19);*/
+    margin-top: 0px;
+    margin-bottom: auto;
+}
+
+.buttons-temp{
+    display: block;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    color: #979797;
+    border:0px;
+    background-color: white;
+    font-size: 24px;
+    
+}
+.btn-group{
+    margin-right: auto;
+    margin-left: 4px;
+    display: block;
+}
+/* Clear floats (clearfix hack) */
+.btn-group:after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  .btn-group .button:not(:last-child) {
+    border-bottom: none; /* Prevent double borders */
+  }
+  
+  /* Add a background color on hover */
+  
+  .buttons-temp:focus, .buttons-temp:hover{
+    background-color: white;
+    border:1px;
+    color: #FF4E00;
+    border-radius: 3px;
+    border-width: 2px;
+    border-style: outset;
+    border-image: initial;
+    outline:none;
+
+  }

@@ -1,5 +1,9 @@
 <div id='global'>
     <app-sidebar id='sides'></app-sidebar>
-    <app-search id='searching'></app-search>
+    <app-search id='searching' (cityName)="buttoninter($event);"></app-search>
+    <div id='infoWeather'>
+        <app-infocard (cityName2)="buttoninter($event);" [nuevoWeather]="weathers"></app-infocard>
+    </div >
+    
 </div>
 

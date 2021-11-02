@@ -23,7 +23,7 @@
         <div class="scrollbar" id="style-scroll">
             <mat-radio-group>
                 <button mat-button class="buttons" *ngFor="let city of cities | filter:searchText"
-                    value="city.name">{{city.name}}</button>
+                    value="city.name" (click)="clickCity(city.name);">{{city.name}}</button>
             </mat-radio-group>
         </div>
     </div>
