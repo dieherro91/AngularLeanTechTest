@@ -9,8 +9,8 @@
 
             <ng-template #buscando class='logos-lup' (click)="onClickToggle()">
 
-                <input matInput type="text" (keyup)="handleKeyUp($event)" class="form-control" 
-                    name="search" placeholder="Search City" [(ngModel)]="searchText" autocomplete="off">
+                <input matInput type="text" (keyup)="handleKeyUp($event)" class="form-control" name="search"
+                    placeholder="Search City" [(ngModel)]="searchText" autocomplete="off">
 
             </ng-template>
         </div>
@@ -22,8 +22,8 @@
     <div id="wrapper">
         <div class="scrollbar" id="style-scroll">
             <mat-radio-group>
-                <button mat-button class="buttons" *ngFor="let city of cities | filter:searchText"
-                    value="city.name" (click)="clickCity(city.name);">{{city.name}}</button>
+                <button mat-button class="buttons" *ngFor="let city of cities | filter:searchText" value="city.name"
+                    (click)="clickCity(city.name);">{{city.name}}</button>
             </mat-radio-group>
         </div>
     </div>

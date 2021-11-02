@@ -9,7 +9,7 @@
 
         <!-- row 2 -->
         <mat-grid-tile [colspan]="24" [rowspan]="4">
-            <mat-card-title id='title-info' >{{weathers.city}}, {{weathers.country}}</mat-card-title>
+            <mat-card-title id='title-info'>{{weathers.city}}, {{weathers.country}}</mat-card-title>
         </mat-grid-tile>
 
         <!-- row 3 -->
@@ -20,45 +20,39 @@
             <div class="btn-group">
                 <button class='buttons-temp' (click)="clickCelsius();">C</button>
                 <button class='buttons-temp' (click)="clickFahrenheit();">F</button>
-                <button class='buttons-temp' (click)="clickKelvin();">K</button>
-                
+                <button class='buttons-temp active' (click)="clickKelvin();">K</button>
+
             </div>
         </mat-grid-tile>
 
         <!-- row 4 -->
         <mat-grid-tile [colspan]="12" [rowspan]="3">
-            <img src="../../../assets/icons/coldWeather.svg" id='icon-weather'>
-            
+            <ng-template [ngIf]="titleHeat()==='Cold'">
+                <img src="../../../assets/icons/coldWeather.svg" id='icon-weather'>
+            </ng-template>
+            <ng-template [ngIf]="titleHeat()==='Warm'">
+                <img src="../../../assets/icons/warmWeather.svg" id='icon-weather'>
+            </ng-template>
+            <ng-template [ngIf]="titleHeat()==='Hot'">
+                <img src="../../../assets/icons/hotWeather.svg" id='icon-weather'>
+            </ng-template>
         </mat-grid-tile>
+
         <mat-grid-tile [colspan]="12" [rowspan]="3">
             <h1 id="title-heat">{{titleHeat()}}</h1>
         </mat-grid-tile>
 
 
-        <!-- row 4 -->
-
+        <!-- row 5 -->
         <mat-grid-tile [colspan]="24" [rowspan]="3">
             <button id="update-temp" mat-button (click)="clickCity(weathers.city);">Update</button>
         </mat-grid-tile>
 
 
-        <!-- row 5 -->
+        <!-- row 6 -->
         <mat-grid-tile [colspan]="24" [rowspan]="1">
         </mat-grid-tile>
 
     </mat-grid-list>
-
-
-    <!-- <div>
-            <mat-card-title id='title-info'>city, country</mat-card-title>
-            <mat-icon id='icon-close'>close</mat-icon>
-        </div>
-        <div>
-            <h1>25°</h1>
-        </div>
-
-        <div>
-            <button mat-button>Update</button>
-        </div> -->
 
 </div>

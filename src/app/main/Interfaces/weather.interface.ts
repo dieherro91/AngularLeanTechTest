@@ -1,8 +1,8 @@
-export interface WeatherData{
-    temperature:number,
-    city:string,
-    country:string,
-    weather:string,
-    icon:string,
-    letterT:string  
+
+//Interface for the data retrive from the API
+export interface WeatherData {
+    temperature: number,
+    city: string,
+    country: string,
+    letterT: string
 }
