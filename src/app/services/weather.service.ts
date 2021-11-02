@@ -14,6 +14,7 @@ export class WeatherService {
   constructor(private http:HttpClient) { }
 
   getWeather(city:string){
-    return this.http.get(this.url+'q='+city+'&appid='+this.keys);
+    
+    return this.http.get(`${this.url}q=${city}&appid=${this.keys}`);
   }
 }

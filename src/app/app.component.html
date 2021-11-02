@@ -1,8 +1,8 @@
 <div id='global'>
     <app-sidebar id='sides'></app-sidebar>
-    <app-search id='searching'></app-search>
+    <app-search id='searching' (cityName)="buttoninter($event);"></app-search>
     <div id='infoWeather'>
-        <app-infocard (onNuevoPersonaje)="buttoninter();"></app-infocard>
+        <app-infocard [nuevoWeather]="weathers" [letterTemperature]="markerTemp"></app-infocard>
     </div >
     
 </div>

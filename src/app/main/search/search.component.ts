@@ -1,5 +1,5 @@
 
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { City } from '../Interfaces/cities.interface';
 import citiesData from '../../../assets/cities.json'
 
@@ -16,6 +16,8 @@ export class SearchComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  @Output() cityName:EventEmitter<string>=new EventEmitter();
+  
 
   nameSearch:string ='City';
   toggle : boolean = true;
@@ -32,5 +34,9 @@ export class SearchComponent implements OnInit {
      }
   }
 
+  clickCity(city:string){
+    this.cityName.emit(city);
+    
+  }
   
 }

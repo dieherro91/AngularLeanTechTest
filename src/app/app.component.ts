@@ -14,23 +14,37 @@ export class AppComponent {
   constructor(private weatherService: WeatherService){}
 
 
-  weathers:WeatherData[]=[];
-
-  temperature:number=0;
-  country:string='';
-  city:string='';
+  weathers:WeatherData={'temperature':0,
+                         'city':'Select',
+                         'country':'City',
+                         'weather':'',
+                         'icon':''
+                        };
   
-  buttoninter():void{
+  markerTemp:string='';
+  errorMessage:string='';
+  
+
+  buttoninter( city : string):void{
     
-    this.weatherService.getWeather("tokio").subscribe((data:any)=>{
-      
-      this.temperature=data.main.temp;
-      this.country=data.sys.country;
-      this.city=data.name;
-      //argumento={}
-      //this.weathers.push(argumento);
-      console.log(data);
-    });
+    this.weatherService.getWeather(`${city}`).subscribe({
+      next: (data:any)=>{
+    
+    this.weathers.temperature=data.main.temp;
+    this.weathers.city=data.name;
+    this.weathers.country=data.sys.country;
+    this.weathers.weather=data.weather[0].description;
+    this.weathers.icon=data.weather[0].icon;
+    
+    this.markerTemp='K';
+
+    console.log(this.weathers)
+    },
+      error: (error)=>{
+        this.errorMessage = error.message;
+        console.error('There was an error!', error);
+      }
+  });
   }
   
 }

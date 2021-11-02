@@ -9,20 +9,18 @@
 
         <!-- row 2 -->
         <mat-grid-tile [colspan]="24" [rowspan]="4">
-            <mat-card-title id='title-info'>city, country</mat-card-title>
+            <mat-card-title id='title-info' >{{weathers.city}}, {{weathers.country}}</mat-card-title>
         </mat-grid-tile>
 
         <!-- row 3 -->
-        <mat-grid-tile [colspan]="8" [rowspan]="6">
-        </mat-grid-tile>
-        <mat-grid-tile [colspan]="8" [rowspan]="6">
-            <h1 id='temperature'>25°</h1>
+        <mat-grid-tile [colspan]="16" [rowspan]="6">
+            <h1 id='temperature'>{{weathers.temperature.toFixed(0)}} °</h1>
         </mat-grid-tile>
         <mat-grid-tile [colspan]="8" [rowspan]="6">
             <div class="btn-group">
-                <button class='buttons-temp'>C</button>
-                <button class='buttons-temp'>F</button>
-                <button class='buttons-temp'>K</button>
+                <button class='buttons-temp' (click)="clickCelsius();">C</button>
+                <button class='buttons-temp' (click)="clickFahrenheit();">F</button>
+                <button class='buttons-temp' (click)="clickKelvin();">K</button>
                 
             </div>
         </mat-grid-tile>

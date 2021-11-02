@@ -37,7 +37,7 @@
 }
 #temperature{
     font-size: 80px;
-    margin: auto;
+    margin-left: auto;
     color:#FF4E00;
 }
 #update-temp{
@@ -75,15 +75,13 @@
     display: table;
   }
   
-  .btn-group button:not(:last-child) {
+  .btn-group .button:not(:last-child) {
     border-bottom: none; /* Prevent double borders */
   }
   
   /* Add a background color on hover */
-  .btn-group button:hover {
-    background-color: gray;
-  }
-  .buttons-temp:focus {
+  
+  .buttons-temp:focus, .buttons-temp:hover{
     background-color: white;
     border:1px;
     color: #FF4E00;
@@ -91,5 +89,6 @@
     border-width: 2px;
     border-style: outset;
     border-image: initial;
+    outline:none;
 
   }
