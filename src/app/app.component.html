@@ -2,7 +2,7 @@
     <app-sidebar id='sides'></app-sidebar>
     <app-search id='searching' (cityName)="buttoninter($event);"></app-search>
     <div id='infoWeather'>
-        <app-infocard [nuevoWeather]="weathers" [letterTemperature]="markerTemp"></app-infocard>
+        <app-infocard (cityName2)="buttoninter($event);" [nuevoWeather]="weathers"></app-infocard>
     </div >
     
 </div>

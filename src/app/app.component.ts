@@ -18,10 +18,11 @@ export class AppComponent {
                          'city':'Select',
                          'country':'City',
                          'weather':'',
-                         'icon':''
+                         'icon':'',
+                         'letterT':'K'
                         };
   
-  markerTemp:string='';
+  markerTemp:string='K';
   errorMessage:string='';
   
 
@@ -35,10 +36,12 @@ export class AppComponent {
     this.weathers.country=data.sys.country;
     this.weathers.weather=data.weather[0].description;
     this.weathers.icon=data.weather[0].icon;
-    
-    this.markerTemp='K';
+    this.weathers.letterT=this.markerTemp='K';
 
-    console.log(this.weathers)
+    
+    
+
+    console.log(this.markerTemp)
     },
       error: (error)=>{
         this.errorMessage = error.message;

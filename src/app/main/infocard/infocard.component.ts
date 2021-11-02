@@ -1,5 +1,5 @@
 
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component,  Input, Output, OnInit, EventEmitter} from '@angular/core';
 import { WeatherData } from '../Interfaces/weather.interface';
 
 @Component({
@@ -7,6 +7,7 @@ import { WeatherData } from '../Interfaces/weather.interface';
   templateUrl: './infocard.component.html',
   styleUrls: ['./infocard.component.css']
 })
+
 export class InfocardComponent implements OnInit {
 
   constructor( ) { }
@@ -14,19 +15,24 @@ export class InfocardComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  
+  @Output() cityName2:EventEmitter<string>=new EventEmitter();
+
   @Input('nuevoWeather') weathers:WeatherData={'temperature':0,
                                                 'city':'',
                                                 'country':'',
                                                 'weather':'',
-                                                'icon':''};
+                                                'icon':'',
+                                              'letterT':'K'};
 
-  @Input('letterTemperature') markerTemp:string='';
-  
-  
-
+  markerTemp:string=this.weathers.letterT;
+  titleWeater:string='';
+  clickCity(city:string){
+    this.cityName2.emit(city);
+    this.markerTemp='K';
+  }
 
   clickCelsius(){
+    
     console.log("entreando celcius")
     console.log(this.markerTemp)
     if(this.markerTemp === 'K'){
@@ -80,4 +86,30 @@ export class InfocardComponent implements OnInit {
     this.markerTemp='K';
     console.log(this.weathers.temperature);   
   }
+
+  temp:number=0;
+  titleHeat():any{
+    this.temp=this.weathers.temperature;
+    if (this.temp<293.15 && this.markerTemp==='K'){
+      return 'Cold'
+    } else if (this.temp>=293.15 && this.temp<=299.15 && this.markerTemp==='K'){
+      return 'Warm'
+    } else if ( this.temp>299.15 && this.markerTemp==='K'){
+      return 'Hot';
+    } else if (this.temp<19&& this.markerTemp==='C'){
+      return 'Cold'
+    } else if (this.temp>=19 && this.temp<=26 && this.markerTemp==='C'){
+      return 'Warm'
+    } else if ( this.temp>26 && this.markerTemp==='C'){
+      return 'Hot';
+    }  else if (this.temp<66.2 && this.markerTemp==='F'){
+      return 'Cold'
+    } else if (this.temp>=66.2 && this.temp<=78.8 && this.markerTemp==='F'){
+      return 'Warm'
+    } else if ( this.temp>78.8 && this.markerTemp==='F'){
+      return 'Hot';
+    }
+  }
+
+
 }

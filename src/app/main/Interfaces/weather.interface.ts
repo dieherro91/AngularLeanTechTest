@@ -3,5 +3,6 @@ export interface WeatherData{
     city:string,
     country:string,
     weather:string,
-    icon:string,    
+    icon:string,
+    letterT:string  
 }
