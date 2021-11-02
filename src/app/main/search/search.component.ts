@@ -1,5 +1,5 @@
 
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { City } from '../Interfaces/cities.interface';
 import citiesData from '../../../assets/cities.json'
 
@@ -9,34 +9,39 @@ import citiesData from '../../../assets/cities.json'
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.css']
 })
-export class SearchComponent implements OnInit {
+export class SearchComponent {
 
-  constructor() { }
+  //Event emiter for the name of the city that will be search
+  @Output() cityName: EventEmitter<string> = new EventEmitter();
 
-  ngOnInit(): void {
-  }
+  //header name in search inbox
+  nameSearch: string = 'City';
 
-  @Output() cityName:EventEmitter<string>=new EventEmitter();
-  
+  //toggle for for the display of the input search
+  toggle: boolean = true;
 
-  nameSearch:string ='City';
-  toggle : boolean = true;
-  cities : City[] =citiesData.cities;
-  searchText:string='';
+  //array from the JSON data of cities
+  cities: City[] = citiesData.cities;
 
-  onClickToggle():void{
+  //variable that will be use to store the filter
+  searchText: string = '';
+
+  //swith to disply de input of search
+  onClickToggle(): void {
     this.toggle = !this.toggle;
   }
 
-  handleKeyUp(xkey:KeyboardEvent):void{
-     if(xkey.key==="Enter"){
+  //conditional to switch to the icon in the search input
+  handleKeyUp(xkey: KeyboardEvent): void {
+    if (xkey.key === "Enter") {
       this.toggle = !this.toggle;
-     }
+    }
   }
 
-  clickCity(city:string){
+  //function that send the name of the city selected to app-component and will search in the API
+  clickCity(city: string) {
     this.cityName.emit(city);
-    
+
   }
-  
+
 }
