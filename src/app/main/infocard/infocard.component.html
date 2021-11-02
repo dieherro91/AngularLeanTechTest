@@ -20,16 +20,24 @@
             <div class="btn-group">
                 <button class='buttons-temp' (click)="clickCelsius();">C</button>
                 <button class='buttons-temp' (click)="clickFahrenheit();">F</button>
-                <button class='buttons-temp' (click)="clickKelvin();">K</button>
+                <button class='buttons-temp active' (click)="clickKelvin();">K</button>
                 
             </div>
         </mat-grid-tile>
 
         <!-- row 4 -->
         <mat-grid-tile [colspan]="12" [rowspan]="3">
-            <img src="../../../assets/icons/coldWeather.svg" id='icon-weather'>
-            
+            <ng-template [ngIf]="titleHeat()==='Cold'">
+                <img src="../../../assets/icons/coldWeather.svg" id='icon-weather'>
+            </ng-template>
+            <ng-template [ngIf]="titleHeat()==='Warm'">
+                <img src="../../../assets/icons/warmWeather.svg" id='icon-weather'>
+            </ng-template>
+            <ng-template [ngIf]="titleHeat()==='Hot'">
+                <img src="../../../assets/icons/hotWeather.svg" id='icon-weather'>
+            </ng-template>         
         </mat-grid-tile>
+        
         <mat-grid-tile [colspan]="12" [rowspan]="3">
             <h1 id="title-heat">{{titleHeat()}}</h1>
         </mat-grid-tile>

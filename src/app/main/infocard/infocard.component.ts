@@ -20,8 +20,6 @@ export class InfocardComponent implements OnInit {
   @Input('nuevoWeather') weathers:WeatherData={'temperature':0,
                                                 'city':'',
                                                 'country':'',
-                                                'weather':'',
-                                                'icon':'',
                                               'letterT':'K'};
 
   markerTemp:string=this.weathers.letterT;
@@ -33,8 +31,6 @@ export class InfocardComponent implements OnInit {
 
   clickCelsius(){
     
-    console.log("entreando celcius")
-    console.log(this.markerTemp)
     if(this.markerTemp === 'K'){
       //convertion K to C
       this.weathers.temperature=this.weathers.temperature-273.15;
@@ -48,17 +44,13 @@ export class InfocardComponent implements OnInit {
       this.weathers.temperature=0;
     }
     this.markerTemp='C';
-    console.log(this.weathers.temperature); 
   }
   clickFahrenheit(){
-    console.log("entreando farenheit")
-    console.log(this.markerTemp)
     if(this.markerTemp === 'K'){
       //convertion K to F
       this.weathers.temperature=(this.weathers.temperature*(9.0/5.0))-459.67;
     } else if (this.markerTemp ==='F') {
       //convertion F to F
-      
     } else if (this.markerTemp ==='C') {
       //convertion C to F
       this.weathers.temperature=(this.weathers.temperature*(9.0/5.0))+32.0;
@@ -66,11 +58,9 @@ export class InfocardComponent implements OnInit {
       this.weathers.temperature=0;
     }
     this.markerTemp='F';
-    console.log(this.weathers.temperature); 
+ 
   }
   clickKelvin(){
-    console.log("entreando Kelvin")
-    console.log(this.markerTemp)
     if(this.markerTemp === 'K'){
       //convertion K to K
       
@@ -83,8 +73,7 @@ export class InfocardComponent implements OnInit {
     } else {
       this.weathers.temperature=0;
     }
-    this.markerTemp='K';
-    console.log(this.weathers.temperature);   
+    this.markerTemp='K';  
   }
 
   temp:number=0;

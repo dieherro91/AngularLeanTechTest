@@ -15,10 +15,8 @@ export class AppComponent {
 
 
   weathers:WeatherData={'temperature':0,
-                         'city':'Select',
+                         'city':'Select a',
                          'country':'City',
-                         'weather':'',
-                         'icon':'',
                          'letterT':'K'
                         };
   
@@ -34,18 +32,17 @@ export class AppComponent {
     this.weathers.temperature=data.main.temp;
     this.weathers.city=data.name;
     this.weathers.country=data.sys.country;
-    this.weathers.weather=data.weather[0].description;
-    this.weathers.icon=data.weather[0].icon;
+    
     this.weathers.letterT=this.markerTemp='K';
 
-    
-    
-
-    console.log(this.markerTemp)
     },
       error: (error)=>{
         this.errorMessage = error.message;
         console.error('There was an error!', error);
+        this.weathers.temperature=0;
+        this.weathers.city='Error: Please ';
+        this.weathers.country='Select a city';
+        this.weathers.letterT=this.markerTemp='K';
       }
   });
   }
